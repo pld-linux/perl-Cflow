@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Cflow - find "interesting" flows in raw IP flow files
-#Summary(pl):	Cflow - znajd¼ ,,interesuj±ce'' przep³ywy(?!) w surowych... eeeh.
+Summary(pl):	Cflow - znajdywanie "interesuj±cych" przep³ywów w surowych plikach przep³ywów IP
 Name:		perl-Cflow
 Version:	1.051
 Release:	4
@@ -14,9 +14,9 @@ Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
 # Source0-md5:	1c4d7034ccc361bf3fe1a8ac58de638b
 Patch0:		%{name}-link.patch
 URL:		http://net.doit.wisc.edu/~plonka/Cflow/
+BuildRequires:	flow-tools-devel >= 0.67-2
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	flow-tools-devel >= 0.67-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

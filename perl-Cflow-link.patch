@@ -1,0 +1,48 @@
+--- Cflow-1.051/Makefile.PL.orig	2002-01-11 23:23:52.000000000 +0100
++++ Cflow-1.051/Makefile.PL	2004-05-08 22:42:57.631621308 +0200
+@@ -35,14 +35,14 @@
+    } else {
+       # neither found... cflowd support only.
+       return { INC     => join(' ', $incdir),
+-	       LIBS    => [ join(' ', $libdir, '-lnsl') ] }
++	       LIBS    => [ join(' ', $libdir) ] }
+    }
+ }
+ 
+ sub find_flow_tools {
+    my($ver, $dir);
+    my($libdir, $incdir);
+-   if (-f '../../lib/libft.a') {
++   if (-f '../../lib/libft.so') {
+       $dir = '../../lib';
+       $incdir = "-I$dir -I$dir/..";
+       $libdir = "-L$dir";
+@@ -51,7 +51,7 @@
+       print "Found flow-tools... using \"-DOSU $incdir $libdir -lft -lz\".\n";
+       return { CCFLAGS => '-DOSU',
+ 	       INC     => join(' ', $incdir),
+-	       LIBS    => [ join(' ', $libdir, '-lnsl -lft -lz') ] }
++	       LIBS    => [ join(' ', $libdir, '-lft -lz') ] }
+    }
+    return undef
+ }
+@@ -68,7 +68,7 @@
+       print "Found argus... using \"-DARGUS $incdir $dir/argus_common.a $dir/argus_parse.a\".\n";
+       return { CCFLAGS => '-DARGUS',
+ 	       INC     => join(' ', $incdir),
+-	       LIBS    => [ join(' ', $libdir, '-lnsl', '-lm') ],
++	       LIBS    => [ join(' ', $libdir, '-lm') ],
+ 	       LDFROM  => "\$(OBJECT) $dir/argus_common.a $dir/argus_parse.a" }
+    }
+    return undef
+--- Cflow-1.051/Cflow.xs.orig	2002-01-31 07:07:19.000000000 +0100
++++ Cflow-1.051/Cflow.xs	2004-05-08 22:45:45.422368693 +0200
+@@ -68,6 +68,8 @@
+ #  define VERSION SAVE_VERSION
+ /* } */
+ 
++int debug;
++
+ #elif defined ARGUS /* }{ */
+ 
+ #  include <arpa/inet.h> /* for inet_addr */

@@ -2,8 +2,8 @@
 Summary:	Cflow perl module
 Summary(pl):	Modu³ perla Cflow
 Name:		perl-Cflow
-Version:	1.045
-Release:	2
+Version:	1.051
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
@@ -44,6 +44,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz
 %attr(755,root,root) %{_bindir}/*
 %{perl_sitearch}/*.pm
-%dir %{perl_sitearch}/auto/Cflow
-%attr(755,root,root) %{perl_sitearch}/auto/Cflow/Cflow.so
+%{perl_sitearch}/auto/Cflow
 %{_mandir}/man?/*

@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	Cflow Perl module
-Summary(pl):	Modu³ Perla Cflow
+Summary:	Cflow - find "interesting" flows in raw IP flow files
+#Summary(pl):	Cflow - znajd¼ ,,interesuj±ce'' przep³ywy(?!) w surowych... eeeh.
 Name:		perl-Cflow
 Version:	1.051
 Release:	4

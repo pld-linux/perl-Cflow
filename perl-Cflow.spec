@@ -8,9 +8,9 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
 URL:		http://net.doit.wisc.edu/~plonka/Cflow/
-BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-devel
+BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,7 +20,10 @@ CAIDA's cflowd, OSU flow-tools and lfapd which collect IP flow export
 information from routers.
 
 %description -l pl
-Modu³ perla Cflow.
+Cflow to modu³ perla udostêpniaj±cy API do czytania i analizy surowych
+plików przep³ywów, zapisanych przez takie wolnodostêpne programy, jak
+cflowd CAIDA, flow-tools OSU i lfapd, zbieraj±cych dane o przep³ywie
+pakietów IP z ruterów.
 
 %prep
 %setup -q -n Cflow-%{version}
@@ -34,14 +37,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf Changes README
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changes README
 %attr(755,root,root) %{_bindir}/*
 %{perl_sitearch}/*.pm
 %{perl_sitearch}/auto/Cflow

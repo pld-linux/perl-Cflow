@@ -7,15 +7,16 @@ Summary:	Cflow perl module
 Summary(pl):	Modu³ perla Cflow
 Name:		perl-Cflow
 Version:	1.051
-Release:	3
+Release:	4
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
 # Source0-md5:	1c4d7034ccc361bf3fe1a8ac58de638b
+Patch0:		%{name}-link.patch
 URL:		http://net.doit.wisc.edu/~plonka/Cflow/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	flow-tools-devel
+BuildRequires:	flow-tools-devel >= 0.67-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,10 +33,11 @@ pakietów IP z ruterów.
 
 %prep
 %setup -q -n Cflow-%{version}
+%patch0 -p1
+
+%{__perl} -pi -e 's#\.\./\.\./lib/#%{_libdir}/#g' Makefile*
 
 %build
-perl -pi -e 's#\.\./\.\./lib/#%{_libdir}/#g' Makefile*
-
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} \
@@ -57,5 +59,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %attr(755,root,root) %{_bindir}/*
 %{perl_vendorarch}/*.pm
-%{perl_vendorarch}/auto/Cflow
+%dir %{perl_vendorarch}/auto/Cflow
+%{perl_vendorarch}/auto/Cflow/autosplit.ix
+%{perl_vendorarch}/auto/Cflow/Cflow.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Cflow/Cflow.so
 %{_mandir}/man?/*

@@ -3,7 +3,7 @@ Summary:	Cflow perl module
 Summary(pl):	Modu³ perla Cflow
 Name:		perl-Cflow
 Version:	1.045
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz

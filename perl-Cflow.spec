@@ -29,7 +29,7 @@ pakietów IP z ruterów.
 %setup -q -n Cflow-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %install

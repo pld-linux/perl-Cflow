@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-Summary:	Cflow perl module
-Summary(pl):	Modu³ perla Cflow
+Summary:	Cflow Perl module
+Summary(pl):	Modu³ Perla Cflow
 Name:		perl-Cflow
 Version:	1.051
 Release:	4
@@ -26,7 +26,7 @@ CAIDA's cflowd, OSU flow-tools and lfapd which collect IP flow export
 information from routers.
 
 %description -l pl
-Cflow to modu³ perla udostêpniaj±cy API do czytania i analizy surowych
+Cflow to modu³ Perla udostêpniaj±cy API do czytania i analizy surowych
 plików przep³ywów, zapisanych przez takie wolnodostêpne programy, jak
 cflowd CAIDA, flow-tools OSU i lfapd, zbieraj±cych dane o przep³ywie
 pakietów IP z ruterów.

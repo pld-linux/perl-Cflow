@@ -7,6 +7,7 @@ Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
+# Source0-md5:	1c4d7034ccc361bf3fe1a8ac58de638b
 URL:		http://net.doit.wisc.edu/~plonka/Cflow/
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13

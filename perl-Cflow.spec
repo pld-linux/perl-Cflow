@@ -13,7 +13,7 @@ Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
 # Source0-md5:	1c4d7034ccc361bf3fe1a8ac58de638b
 URL:		http://net.doit.wisc.edu/~plonka/Cflow/
-BuildRequires:	perl-devel >= 5.6
+BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	flow-tools-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

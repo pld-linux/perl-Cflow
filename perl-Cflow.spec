@@ -3,7 +3,7 @@ Summary:	Cflow perl module
 Summary(pl):	Modu³ perla Cflow
 Name:		perl-Cflow
 Version:	1.051
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
@@ -11,6 +11,7 @@ Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
 URL:		http://net.doit.wisc.edu/~plonka/Cflow/
 BuildRequires:	perl-devel >= 5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	flow-tools-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -29,6 +30,8 @@ pakietów IP z ruterów.
 %setup -q -n Cflow-%{version}
 
 %build
+perl -pi -e 's#\.\./\.\./lib/#%{_libdir}/#g' Makefile*
+
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make} OPTIMIZE="%{rpmcflags}"

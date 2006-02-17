@@ -3,15 +3,16 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
+%define		pdir	Cflow
 Summary:	Cflow - find "interesting" flows in raw IP flow files
 Summary(pl):	Cflow - znajdywanie "interesuj±cych" przep³ywów w surowych plikach przep³ywów IP
 Name:		perl-Cflow
-Version:	1.051
-Release:	4
+Version:	1.053
+Release:	1
 License:	GPL v2+
 Group:		Development/Languages/Perl
 Source0:	http://net.doit.wisc.edu/~plonka/Cflow/Cflow-%{version}.tar.gz
-# Source0-md5:	1c4d7034ccc361bf3fe1a8ac58de638b
+# Source0-md5:	4d868045636cbda9b775e8d9e27b44e7
 Patch0:		%{name}-link.patch
 URL:		http://net.doit.wisc.edu/~plonka/Cflow/
 BuildRequires:	flow-tools-devel >= 0.67-2

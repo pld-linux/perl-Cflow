@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Cflow
 Summary:	Cflow - find "interesting" flows in raw IP flow files
-Summary(pl):	Cflow - znajdywanie "interesuj±cych" przep³ywów w surowych plikach przep³ywów IP
+Summary(pl.UTF-8):   Cflow - znajdywanie "interesujÄ…cych" przepÅ‚ywÃ³w w surowych plikach przepÅ‚ywÃ³w IP
 Name:		perl-Cflow
 Version:	1.053
 Release:	1
@@ -26,11 +26,11 @@ flow files written by freely-available software packages such as
 CAIDA's cflowd, OSU flow-tools and lfapd which collect IP flow export
 information from routers.
 
-%description -l pl
-Cflow to modu³ Perla udostêpniaj±cy API do czytania i analizy surowych
-plików przep³ywów, zapisanych przez takie wolnodostêpne programy, jak
-cflowd CAIDA, flow-tools OSU i lfapd, zbieraj±cych dane o przep³ywie
-pakietów IP z ruterów.
+%description -l pl.UTF-8
+Cflow to moduÅ‚ Perla udostÄ™pniajÄ…cy API do czytania i analizy surowych
+plikÃ³w przepÅ‚ywÃ³w, zapisanych przez takie wolnodostÄ™pne programy, jak
+cflowd CAIDA, flow-tools OSU i lfapd, zbierajÄ…cych dane o przepÅ‚ywie
+pakietÃ³w IP z ruterÃ³w.
 
 %prep
 %setup -q -n Cflow-%{version}

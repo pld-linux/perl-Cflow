@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Cflow
 Summary:	Cflow - find "interesting" flows in raw IP flow files
-Summary(pl.UTF-8):   Cflow - znajdywanie "interesujących" przepływów w surowych plikach przepływów IP
+Summary(pl.UTF-8):	Cflow - znajdywanie "interesujących" przepływów w surowych plikach przepływów IP
 Name:		perl-Cflow
 Version:	1.053
 Release:	1

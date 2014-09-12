@@ -63,6 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/*.pm
 %dir %{perl_vendorarch}/auto/Cflow
 %{perl_vendorarch}/auto/Cflow/autosplit.ix
-%{perl_vendorarch}/auto/Cflow/Cflow.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Cflow/Cflow.so
 %{_mandir}/man?/*
